@@ -1,0 +1,7 @@
+{
+  "name": "kmMaisBarato",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
