@@ -1,20 +1,87 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+ 
+<ion-item slot="start" lines="none"> 
+    <ion-title class="light" >Gasolina ou Álcool?</ion-title>
+</ion-item>
+
+<ion-item slot="end" lines="none">  
+  <ion-avatar>
+    <img src="../../assets/19185.jpg">
+  </ion-avatar>
+</ion-item>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" padding>
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+
+    <ion-row class="ion-align-items-center">
+
+      <ion-col size="2">
+        <ion-icon name="color-fill" color="warning"></ion-icon>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-label color="warning">Gasolina</ion-label>
+      </ion-col>
+
+      <ion-col size="2">
+        <ion-icon name="color-fill" color="success"></ion-icon>
+      </ion-col>
+      <ion-col size="4">
+        <ion-label color="success">Álcool</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center">
+
+      <ion-col size="6">
+        <ion-item  class="ion-text-center">
+          <ion-label  position="floating" ></ion-label>
+          <ion-input type="number"class="input1" name="input1" [(ngModel)]="precoGasolina" placeholder="0,00"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item class="ion-text-center">
+          <ion-label position="floating"></ion-label>
+          <ion-input type="number" name="input2" [(ngModel)]="precoAlcool" class="input2" placeholder="0,00"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+  <ion-card name="skip-backward"  class="ion-text-center">
+ 
+    <ion-button expand="block" (click)="calculaPreco()" color="secondary">Calcular</ion-button>
+
+</ion-card>
+  <ion-card name="skip-backward" color="danger" class="ion-text-center">
+    
+        <ion-card-content class="label1"> 
+          <ion-card-header>Resultado: </ion-card-header>
+          <p>{{resultadoTexto}}<br><br>
+          </p>
+        </ion-card-content>
+
+        <img src="../../assets/gas.jpg">
+
+  </ion-card>
+
+  <br><br>
+  <ion-card name="skip-backward"  class="ion-text-center">
+
+    <ion-button (click)="fechar()" expand="block"   color="dark">Sair do App</ion-button>
+
+</ion-card>
+
+ 
+
+
 </ion-content>
